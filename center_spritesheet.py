@@ -1,4 +1,28 @@
 #!/usr/bin/env python3
+"""
+center_spritesheet.py - Center subjects in a grid-based sprite sheet with optional auto-crop or uniform-cell modes
+
+Example commands:
+    # Basic usage with specified rows and columns:
+    python center_spritesheet.py --in-sheet input.png --out-sheet centered.png --rows 4 --cols 4
+    
+    # Specify a background color to ignore:
+    python center_spritesheet.py --in-sheet input.png --out-sheet centered.png --rows 4 --cols 4 --bg-color "#FF00FF"
+    
+    # Auto-crop the sheet before processing:
+    python center_spritesheet.py --in-sheet input.png --out-sheet centered.png --rows 4 --cols 4 --auto-crop
+    
+    # Create a uniform cell size based on largest content:
+    python center_spritesheet.py --in-sheet input.png --out-sheet centered.png --rows 4 --cols 4 --uniform-cell
+    
+    # Combine options:
+    python center_spritesheet.py --in-sheet input.png --out-sheet centered.png --rows 4 --cols 4 --auto-crop --uniform-cell --bg-color "#FF00FF"
+
+Requirements:
+    - Pillow (pip install Pillow)
+    - numpy (pip install numpy)
+"""
+
 import argparse
 import logging
 from PIL import Image

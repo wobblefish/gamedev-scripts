@@ -2,8 +2,21 @@
 """
 resize_images.py - Resize images in a folder to a specified width or height while maintaining aspect ratio
 
-Usage:
-    python resize_images.py --input_folder <input_folder> --output_folder <output_folder> (--width <target_width> | --height <target_height>) [--filter <filter_method>] [--quality <quality>]
+Example commands:
+    # Resize all images in folder to 500px width (preserving aspect ratio):
+    python resize_images.py --input_folder ./original_images --output_folder ./resized_images --width 500
+    
+    # Resize all images in folder to 300px height (preserving aspect ratio):
+    python resize_images.py --input_folder ./original_images --output_folder ./resized_images --height 300
+    
+    # Specify the resampling filter method:
+    python resize_images.py --input_folder ./original_images --output_folder ./resized_images --width 500 --filter bicubic
+    
+    # Set JPEG quality and convert all images to PNG format:
+    python resize_images.py --input_folder ./original_images --output_folder ./resized_images --width 500 --quality 90 --format png
+    
+    # Convert images to WebP format with 85 quality:
+    python resize_images.py --input_folder ./original_images --output_folder ./resized_webp --width 800 --quality 85 --format webp
 
 Options:
     --input_folder    Directory containing images to resize
@@ -16,6 +29,9 @@ Options:
     --quality         JPEG quality (1-100, default: 95)
     --format          Output format (default: same as input)
                       Options: 'jpeg', 'png', 'webp', etc.
+
+Requirements:
+    - Pillow (pip install Pillow)
 """
 
 import os
